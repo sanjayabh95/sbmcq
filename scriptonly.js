@@ -1,68 +1,68 @@
-// JavaScript code
+        // JavaScript code
         const questionDatabases = {
-            &#39;Geography&#39;: [
+            'Geography': [
                 {
-                    question: &quot;1 What is the capital of France?&quot;,
+                    question: "1 What is the capital of France?",
                     options: [
-                        { text: &quot;Paris&quot;, correct: true },
-                        { text: &quot;Berlin&quot;, correct: false },
-                        { text: &quot;London&quot;, correct: false },
-                        { text: &quot;Madrid&quot;, correct: false },
+                        { text: "Paris", correct: true },
+                        { text: "Berlin", correct: false },
+                        { text: "London", correct: false },
+                        { text: "Madrid", correct: false },
                     ],
-                    remark: &quot;Paris is the capital of France.&quot;
+                    remark: "Paris is the capital of France."
                 },
                 {
-                    question: &quot;2 What is the capital of Nepal?&quot;,
+                    question: "2 What is the capital of Nepal?",
                     options: [
-                        { text: &quot;Kathmandu&quot;, correct: true },
-                        { text: &quot;Berlin&quot;, correct: false },
-                        { text: &quot;London&quot;, correct: false },
-                        { text: &quot;Madrid&quot;, correct: false },
+                        { text: "Kathmandu", correct: true },
+                        { text: "Berlin", correct: false },
+                        { text: "London", correct: false },
+                        { text: "Madrid", correct: false },
                     ],
-                    remark: &quot;Kathmandu is the capital of Nepal.&quot;
+                    remark: "Kathmandu is the capital of Nepal."
                 },
                 {
-                    question: &quot;3 What is the capital of India?&quot;,
+                    question: "3 What is the capital of India?",
                     options: [
-                        { text: &quot;Paris&quot;, correct: false },
-                        { text: &quot;New Delhi&quot;, correct: true },
-                        { text: &quot;London&quot;, correct: false },
-                        { text: &quot;Madrid&quot;, correct: false },
+                        { text: "Paris", correct: false },
+                        { text: "New Delhi", correct: true },
+                        { text: "London", correct: false },
+                        { text: "Madrid", correct: false },
                     ],
-                    remark: &quot;New Delhi is the capital of India.&quot;
+                    remark: "New Delhi is the capital of India."
                 },
                 {
-                    question: &quot;4 What is the capital of China?&quot;,
+                    question: "4 What is the capital of China?",
                     options: [
-                        { text: &quot;Paris&quot;, correct: false },
-                        { text: &quot;Berlin&quot;, correct: false },
-                        { text: &quot;London&quot;, correct: false },
-                        { text: &quot;Beijing&quot;, correct: true },
+                        { text: "Paris", correct: false },
+                        { text: "Berlin", correct: false },
+                        { text: "London", correct: false },
+                        { text: "Beijing", correct: true },
                     ],
-                    remark: &quot;Beijing is the capital of China.&quot;
+                    remark: "Beijing is the capital of China."
                 },
                 {
-                    question: &quot;5 What is the capital of Bangladesh?&quot;,
+                    question: "5 What is the capital of Bangladesh?",
                     options: [
-                        { text: &quot;Paris&quot;, correct: false },
-                        { text: &quot;Berlin&quot;, correct: false },
-                        { text: &quot;Dhaka&quot;, correct: true },
-                        { text: &quot;Madrid&quot;, correct: false },
+                        { text: "Paris", correct: false },
+                        { text: "Berlin", correct: false },
+                        { text: "Dhaka", correct: true },
+                        { text: "Madrid", correct: false },
                     ],
-                    remark: &quot;Dhaka is the capital of Bangladesh.&quot;
+                    remark: "Dhaka is the capital of Bangladesh."
                 },
                 // Add more questions and options for Geography category
             ],
-            &#39;History&#39;: [
+            'History': [
                 {
-                    question: &quot;1 What event triggered World War I?&quot;,
+                    question: "1 What event triggered World War I?",
                     options: [
-                        { text: &quot;Assassination of Archduke Franz Ferdinand&quot;, correct: true },
-                        { text: &quot;Atomic bombing of Hiroshima&quot;, correct: false },
-                        { text: &quot;Discovery of America&quot;, correct: false },
-                        { text: &quot;French Revolution&quot;, correct: false },
+                        { text: "Assassination of Archduke Franz Ferdinand", correct: true },
+                        { text: "Atomic bombing of Hiroshima", correct: false },
+                        { text: "Discovery of America", correct: false },
+                        { text: "French Revolution", correct: false },
                     ],
-                    remark: &quot;The assassination of Archduke Franz Ferdinand triggered World War I.&quot;
+                    remark: "The assassination of Archduke Franz Ferdinand triggered World War I."
                 },
                 // Add more questions and options for History category
             ],
@@ -70,28 +70,28 @@
         };
 
         const mixedCategories = {
-            &#39;Mixedquestions1&#39;: {
-                &#39;History&#39;: 0,
-                &#39;Geography&#39;: 5,
+            'Mixedquestions1': {
+                'History': 0,
+                'Geography': 5,
             },
-            &#39;Mixedquestions2&#39;: {
-                &#39;Geography&#39;: 0,
-                &#39;History&#39;: 0,
-				&#39;Mixedquestions1&#39;: 4,
+            'Mixedquestions2': {
+                'Geography': 0,
+                'History': 0,
+				'Mixedquestions1': 4,
             }
         };
 
-        Object.keys(questionDatabases).forEach(category =&gt; {
-            if (category.startsWith(&#39;Mixedquestions&#39;)) {
+        Object.keys(questionDatabases).forEach(category => {
+            if (category.startsWith('Mixedquestions')) {
                 delete questionDatabases[category];
             }
         });
 
-        Object.keys(mixedCategories).forEach(mixedCategoryName =&gt; {
+        Object.keys(mixedCategories).forEach(mixedCategoryName => {
             const mixedCategoryConfig = mixedCategories[mixedCategoryName];
             const mixedCategoryQuestions = [];
 
-            Object.keys(mixedCategoryConfig).forEach(category =&gt; {
+            Object.keys(mixedCategoryConfig).forEach(category => {
                 const categoryQuestions = questionDatabases[category];
                 if (categoryQuestions) {
                     mixedCategoryQuestions.push(...categoryQuestions.slice(0, mixedCategoryConfig[category]));
@@ -102,7 +102,7 @@
 
         // Function to shuffle an array
         function shuffleArray(array) {
-            for (let i = array.length - 1; i &gt; 0; i--) {
+            for (let i = array.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [array[i], array[j]] = [array[j], array[i]];
             }
@@ -111,87 +111,87 @@
         // Function to initialize the quiz
         function initializeQuiz() {
             // Get the selected category and shuffle flag from the data attributes
-            const questionContainer = document.querySelector(&#39;.quiz&#39;);
-            const selectedCategory = questionContainer.getAttribute(&#39;data-category&#39;);
-            const shuffleQuestions = questionContainer.getAttribute(&#39;data-shuffle-questions&#39;) === &#39;true&#39;;
+            const questionContainer = document.querySelector('.quiz');
+            const selectedCategory = questionContainer.getAttribute('data-category');
+            const shuffleQuestions = questionContainer.getAttribute('data-shuffle-questions') === 'true';
 
             // Shuffle questions if the shuffle flag is true
             if (shuffleQuestions) {
                 shuffleArray(questionDatabases[selectedCategory]);
             }
 
-            const submitButton = document.getElementById(&#39;submit-button&#39;);
-            const scoreDisplay = document.getElementById(&#39;score-display&#39;);
+            const submitButton = document.getElementById('submit-button');
+            const scoreDisplay = document.getElementById('score-display');
             let score = 0; // Initialize the score variable
             const questions = questionDatabases[selectedCategory];
 
-            questions.forEach((questionData, questionIndex) =&gt; {
-                const questionElement = document.createElement(&#39;div&#39;);
-                questionElement.classList.add(&#39;question&#39;);
+            questions.forEach((questionData, questionIndex) => {
+                const questionElement = document.createElement('div');
+                questionElement.classList.add('question');
                 questionElement.innerHTML = `<p>${questionData.question}</p>`;
 
-                questionData.options.forEach((optionData, optionIndex) =&gt; {
-                    const optionElement = document.createElement(&#39;div&#39;);
-                    optionElement.classList.add(&#39;option&#39;);
+                questionData.options.forEach((optionData, optionIndex) => {
+                    const optionElement = document.createElement('div');
+                    optionElement.classList.add('option');
                     optionElement.textContent = optionData.text;
-                    optionElement.setAttribute(&#39;data-correct&#39;, optionData.correct);
+                    optionElement.setAttribute('data-correct', optionData.correct);
 
                     let answered = false; // Track if this question has been answered
 
-                    optionElement.addEventListener(&#39;click&#39;, () =&gt; {
+                    optionElement.addEventListener('click', () => {
                         if (answered) {
                             return; // Do nothing if already answered
                         }
 
                         // Remove any previous selection
-                        const options = questionElement.querySelectorAll(&#39;.option&#39;);
-                        options.forEach(o =&gt; o.classList.remove(&#39;correct&#39;, &#39;incorrect&#39;));
+                        const options = questionElement.querySelectorAll('.option');
+                        options.forEach(o => o.classList.remove('correct', 'incorrect'));
 
                         // Check if the clicked option is correct
                         if (optionData.correct) {
-                            optionElement.classList.add(&#39;correct&#39;);
+                            optionElement.classList.add('correct');
                             score++; // Increase the score for correct answers
                         } else {
-                            optionElement.classList.add(&#39;incorrect&#39;);
+                            optionElement.classList.add('incorrect');
                             // Find the correct answer and highlight it in green
-                            const correctAnswer = questionElement.querySelector(&#39;.option[data-correct=&quot;true&quot;]&#39;);
-                            correctAnswer.classList.add(&#39;correct&#39;);
+                            const correctAnswer = questionElement.querySelector('.option[data-correct="true"]');
+                            correctAnswer.classList.add('correct');
                         }
 
                         answered = true; // Set answered flag
-                        options.forEach(o =&gt; {
-                            o.style.pointerEvents = &#39;none&#39;; // Disable click events on all options
+                        options.forEach(o => {
+                            o.style.pointerEvents = 'none'; // Disable click events on all options
                         });
 
                         // Show the remarks for the question
-                        const remarkElement = questionElement.querySelector(&#39;.remark&#39;);
-                        remarkElement.style.display = &#39;block&#39;;
+                        const remarkElement = questionElement.querySelector('.remark');
+                        remarkElement.style.display = 'block';
 						
-						questionElement.scrollIntoView({ behavior: &#39;smooth&#39;, block: &#39;center&#39; });
+						questionElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
                     });
 
                     questionElement.appendChild(optionElement);
                 });
 
-                // Add a remark element within each question&#39;s container
+                // Add a remark element within each question's container
                 if (questionData.remark) {
-                    const remarkElement = document.createElement(&#39;p&#39;);
-                    remarkElement.classList.add(&#39;remark&#39;);
+                    const remarkElement = document.createElement('p');
+                    remarkElement.classList.add('remark');
                     remarkElement.textContent = questionData.remark;
-                    remarkElement.style.display = &#39;none&#39;; // Initially hidden
+                    remarkElement.style.display = 'none'; // Initially hidden
                     questionElement.appendChild(remarkElement);
                 }
 
                 questionContainer.appendChild(questionElement);
             });
 
-            submitButton.addEventListener(&#39;click&#39;, () =&gt; {
-                const scoreBox = document.querySelector(&#39;.score-box&#39;);
-                scoreBox.style.display = &#39;block&#39;; // Show the score box
+            submitButton.addEventListener('click', () => {
+                const scoreBox = document.querySelector('.score-box');
+                scoreBox.style.display = 'block'; // Show the score box
                 scoreDisplay.textContent = `Your Score: ${score} out of ${questions.length}`;
 
                 // Scroll to the score display
-                scoreBox.scrollIntoView({ behavior: &#39;smooth&#39;, block: &#39;center&#39; });
+                scoreBox.scrollIntoView({ behavior: 'smooth' });
             });
         }
 
